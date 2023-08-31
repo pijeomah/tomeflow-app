@@ -1,0 +1,33 @@
+<%- include('partials/header') -%>
+<div class="container center-align z-depth-1 height-600">
+<div class="row">
+    <div class="col s12 m8 offset-m2 l6 offset-l3 height-600">
+      <h4 class="mb-6">Post Your Review</h4>
+    <form action="/review/createReview" enctype="multipart/form-data" method="POST">
+      <div class="input-field mb-5">
+          <input type="text" class="" id="title" name="title">
+          <label for="title" class="">Title</label>
+      </div>
+      <div class="input-field mb-5">
+        <label for="review" class="form-label">Review</label>
+        <textarea name="review" id="review" class="materialize-textarea"></textarea>
+    </div>
+      
+        <label for="imageUpload"></label>
+          <div class="btn mb-5">
+              <input type="file" class="form-control" id="imageUpload" name="file">
+          </div>
+          <div class="row">
+            <div class="col s12 ">
+              <button type="submit" class="btn center-align" value="Upload">Submit</button>
+          </div>
+          </div>
+          
+   
+    </form>
+    </div>
+  </div>
+</div>
+
+</div>
+<%- include('partials/footer') -%>

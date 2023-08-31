@@ -1,0 +1,9 @@
+:root {
+    --color-accent: #2196F3; /* Your custom accent color */
+  }
+
+  .btn {
+    background-color: var(--color-accent);
+    color: white;
+  }
+  

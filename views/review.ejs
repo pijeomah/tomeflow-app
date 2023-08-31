@@ -1,0 +1,79 @@
+<%- include('partials/header') -%>
+
+<div class="container center-align">
+  
+    <div class="col s12 m8">
+      <div class="card-panel">
+        <h3><%= review.title %></h3>
+        <img class="responsive-img  img-size" src="<%= review.image%>" />
+        <div class="row">
+          <form
+            class="i-block mx-1"
+            action="/review/upvoteReview/<%= review.id %>?_method=PUT"
+            method="POST"
+          >
+            <button type="submit"><i class="material-icons">thumb_up</i></button>
+          </form>
+          <form
+            class="i-block mx-1"
+            action="/review/downvoteReview/<%= review.id %>?_method=PUT"
+            method="POST"
+          >
+            <button type="submit"><i class="material-icons">thumb_down</i></button>
+          </form>
+          <form
+            class="i-block mx-1"
+            action="/review/recommendReview/<%= review.id %>"
+            method="POST"
+          >
+            <button type="submit"><i class="material-icons">star_border</i></button>
+          </form>
+          <form
+            action="/review/deleteReview/<%= review.id %>?_method=DELETE"
+            method="POST"
+            class="i-block mx-1"
+          >
+            <button type="submit"><i class="material-icons">delete</i></button>
+          </form>
+        </div>
+        <h3 class="">Likes: <%= review.upvotes %></h3>
+        <% if (review.user == user.id) { %>
+          
+        <% } %>
+        <div class="card-content center-align">
+          <p><%= review.review %></p>
+        </div>
+        <h4>Add a comment</h4>
+        <form action="/comment/createComment/<%=review.id %>" method="POST">
+          <div class="input-field">
+            <label for="comment">Comment</label>
+            <input type="text" id="comment" name="comment">
+          </div>
+          <button type="submit" class="btn">Submit</button>
+        </form>
+        <ul>
+          <!-- adding a userName and delete button -->
+         <% for (var i=0; i <comments.length; i++) {%>
+            <li class="col-6 justify-content-between mt-5">
+              <!-- //display the comment user name and create a conditional that checks if our comment id is the same as our user id in order to show the delet button  -->
+              <%= comments[i].createdBy%> says "<%= comments[i].comment%>"
+              <%if(comments[i].createdById == user.id){%>
+        <form
+                 action="/comment/deleteComment/<%= review.id %>/<%=comments[i]._id %>?_method=DELETE" method="POST" class="i-block"
+  
+        >
+          <button class="btn btn-outline-danger fa fa-trash " type="submit"></button>
+        </form>
+        <%}%>
+            </li>
+          <%}%>
+        </ul>
+        
+        <!-- <a class="btn" href="/profile">Return to Profile</a> -->
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') -%>

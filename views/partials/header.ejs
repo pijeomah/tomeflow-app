@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TomeFlow</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/imgs/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="/js/shared.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,200;0,400;0,700;1,600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+    <header class="">
+      <nav>
+        <div class="nav-wrapper" style="padding-top: 0px; padding-bottom: 20px;">
+            <a href="#" class="brand-logo" style="color: #2196F3;">
+                <i class="fas fa-solid fa-book-open icon-size mx-1"></i>
+            </a>
+            <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/">Home</a></li>
+                <li><a href="/feed">Reviews</a></li>
+                <li><a href="/recommends">Recommendations</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    
+      <ul class="sidenav" id="mobile-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/feed">Reviews</a></li>
+        <li><a href="/recommends">Recommendations</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </header>
+    
+
+    <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const sidenav = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(sidenav);
+  });
+</script>
+  </body>
+</html>

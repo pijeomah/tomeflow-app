@@ -1,0 +1,39 @@
+<%- include('partials/header') -%>
+
+<main class="valign-wrapper" style="height: 100vh;">
+  <div class="container">
+    <section class="row">
+      <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
+      <div class="col s12"><%= el.msg %></div>
+      <% }) %> <% } %> <% if (locals.messages.info) { %> <%
+      messages.info.forEach( el => { %>
+      <div class="col s12"><%= el.msg %></div>
+      <% }) %> <% } %>
+      <form class="col s12" action="/login" method="POST">
+        <div class="input-field">
+          <label for="exampleInputEmail1">Email address</label>
+          <input
+            type="email"
+            class="validate"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            name="email"
+          />
+        </div>
+        <div class="input-field">
+          <label for="exampleInputPassword1">Password</label>
+          <input
+            type="password"
+            class="validate"
+            id="exampleInputPassword1"
+            name="password"
+          />
+        </div>
+        <button type="submit" class="btn waves-effect waves-light">Submit</button>
+      </form>
+    </section>
+  </div>
+</main>
+
+
+<%- include('partials/footer') -%>
